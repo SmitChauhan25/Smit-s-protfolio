@@ -26,6 +26,7 @@ export default function Footer() {
             <span className="text-gray-500 text-xs uppercase tracking-widest block mb-4">Navigation</span>
             <ul className="flex flex-col gap-2 font-medium text-lg">
               <li><Link to="/" className="hover:opacity-70 transition-opacity">Home</Link></li>
+              <li><Link to="/experience" className="hover:opacity-70 transition-opacity">Experience</Link></li>
               <li><Link to="/work" className="hover:opacity-70 transition-opacity">Work</Link></li>
               <li><Link to="/education" className="hover:opacity-70 transition-opacity">Education</Link></li>
               <li><Link to="/contact" className="hover:opacity-70 transition-opacity">Contact</Link></li>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, Briefcase, Calendar, Clock, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import WordsPullUp from '../components/WordsPullUp';
 import WordsPullUpMultiStyle from '../components/WordsPullUpMultiStyle';
 import AnimatedLetter from '../components/AnimatedLetter';
@@ -13,7 +14,7 @@ const FEATURE_VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4';
 
 const ABOUT_TEXT =
-  "Third-year B.Tech student in Electronics & Computer Science (via diploma lateral entry) with hands-on experience building full-stack web applications to SQL-backed web apps in Flask and PHP. I enjoy taking a project from a database schema to a working interface. I am currently studying at Shah and Anchor Kutchhi Engineering College (2025 - 2028), and previously earned my Diploma in Computer Engineering from Gramin Polytechnic College, Nanded.";
+  "Third-year B.Tech student in Electronics & Computer Science (via diploma lateral entry) with hands-on experience building full-stack web applications and SQL-backed web apps using Flask and PHP, alongside freelance experience spanning UI/UX design, project management, and software testing. I enjoy taking projects from database design to working interfaces while continuously building practical projects alongside my coursework.";
 
 const customEase = [0.16, 1, 0.3, 1] as const;
 const cardEase = [0.22, 1, 0.36, 1] as const;
@@ -98,6 +99,84 @@ export default function Home() {
               <AnimatedLetter key={index} char={char} index={index} totalChars={chars.length} scrollTarget={paragraphRef} />
             ))}
           </p>
+        </div>
+      </section>
+
+      {/* EXPERIENCE SECTION */}
+      <section className="bg-black py-16 sm:py-24 px-4 md:px-6 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
+            <div>
+              <span className="text-primary text-[10px] sm:text-xs tracking-widest uppercase mb-4 block">
+                Professional Background
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-primary">
+                Work Experience.
+              </h2>
+            </div>
+            <Link
+              to="/experience"
+              className="group inline-flex items-center gap-2 text-primary hover:text-white transition-colors text-sm font-medium"
+            >
+              <span>View detailed experience</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <motion.div
+            className="bg-[#101010] border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-10 md:p-12 relative overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: customEase }}
+          >
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary font-medium">
+                  <Briefcase className="w-3.5 h-3.5 text-primary" />
+                  Freelance
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
+                  <Calendar className="w-3.5 h-3.5" />
+                  2026
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400">
+                  <Clock className="w-3.5 h-3.5" />
+                  3–6 months
+                </span>
+              </div>
+              <span className="inline-flex items-center gap-1 text-xs text-primary/80 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                <Sparkles className="w-3 h-3 text-primary" />
+                Multiple Clients & Startups
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-normal text-primary mb-2">
+              Freelance UI/UX Designer, Project Manager & Software Tester
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base mb-8 max-w-3xl leading-relaxed">
+              Multiple Clients (Direct Clients, Referrals & Local Businesses/Startups). Delivered end-to-end client projects spanning wireframing & prototyping, functional/manual software testing, sprint timelines, and technical problem solving.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 border-t border-white/5">
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-white/15 transition-colors">
+                <h4 className="text-primary font-medium text-sm mb-1">UI/UX Design</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Wireframes, interactive mockups, and clean user-centric layouts.</p>
+              </div>
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-white/15 transition-colors">
+                <h4 className="text-primary font-medium text-sm mb-1">Project Management</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Timeline planning, stakeholder communication, and on-time delivery.</p>
+              </div>
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-white/15 transition-colors">
+                <h4 className="text-primary font-medium text-sm mb-1">Software Testing</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Functional and manual QA to catch bugs and verify reliability.</p>
+              </div>
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-white/15 transition-colors">
+                <h4 className="text-primary font-medium text-sm mb-1">Problem Solving</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Analytical debugging and overcoming technical bottlenecks.</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
