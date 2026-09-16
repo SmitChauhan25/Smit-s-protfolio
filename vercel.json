@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd prisma-studio && npm install && npm run build",
+  "outputDirectory": "prisma-studio/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
