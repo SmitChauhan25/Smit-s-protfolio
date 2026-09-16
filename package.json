@@ -1,0 +1,8 @@
+{
+  "name": "smit-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix prisma-studio install && npm --prefix prisma-studio run build && node copy-build.js"
+  }
+}
